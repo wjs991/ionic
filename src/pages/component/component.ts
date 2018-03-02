@@ -77,6 +77,6 @@ export class ComponentPage {
   }
 
   slide(){
-    
+    //sdssdfsdssd
   }
 }
