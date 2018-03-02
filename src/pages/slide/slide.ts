@@ -14,6 +14,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'slide.html',
 })
 export class SlidePage {
+  public images =[
+    {
+      title :'assets/imgs/glass.jpg'
+    },
+    {
+      title :'assets/imgs/tree_1.jpg'
+    },
+    {
+      title :'assets/imgs/tree_2.jpg'
+    }
+  ]
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

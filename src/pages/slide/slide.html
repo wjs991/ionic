@@ -15,4 +15,11 @@
 
 <ion-content padding>
 
+  <ion-slides>
+    <ion-slide style="background-color:black" *ngFor='let im of images'>
+      <img src={{im.title}}>
+    </ion-slide >
+    
+  </ion-slides>
+
 </ion-content>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,Platform,ActionSheetController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,Platform,ActionSheetController,AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the ComponentPage page.
@@ -15,11 +15,17 @@ import { IonicPage, NavController, NavParams,Platform,ActionSheetController } fr
 })
 export class ComponentPage {
 
+  public User={
+    name:'',
+    password:''
+
+  };
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public platform: Platform,
-    public actionsheetCtrl: ActionSheetController
+    public actionsheetCtrl: ActionSheetController,
+    public alertCtrl:AlertController
   ) 
   {
 
@@ -77,10 +83,45 @@ export class ComponentPage {
   }
 
   slide(){
-    //sdssdfsdssdsdsdfsdfsdsdsd
-    var s;
-    //sdfijsdsfsndl
-    let v;
-    //asdfasdgasdgasdgasd
+    this.navCtrl.push("SlidePage");
+
+  }
+
+  presentPrompt() {
+    let alert = this.alertCtrl.create({
+      title: 'Login',
+      inputs: [
+        {
+          name: 'username',
+          placeholder: 'Username'
+        },
+        {
+          name: 'password',
+          placeholder: 'Password',
+          type: 'password'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Login',
+          handler: data => {
+            this.User.name = data.username;
+            this.User.password =data.password;
+            this.navCtrl.push('NavPage',{
+              User : this.User
+            });
+          }
+          
+        }
+      ]
+    });
+    alert.present();
   }
 }
