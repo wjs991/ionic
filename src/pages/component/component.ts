@@ -81,5 +81,6 @@ export class ComponentPage {
     var s;
     //sdfijsdsfsndl
     let v;
+    //asdfasdgasdgasdgasd
   }
 }
