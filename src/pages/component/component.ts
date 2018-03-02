@@ -76,4 +76,7 @@ export class ComponentPage {
     actionSheet.present();
   }
 
+  slide(){
+    
+  }
 }
